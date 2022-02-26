@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class SpringCicdApplicationTests {
+public class ControllerTest {
 
     @Autowired
     private MockMvc mvc;
@@ -26,5 +26,4 @@ class SpringCicdApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect((ResultMatcher) content().string(equalTo("Esta es la página principal")));
     }
-
 }
