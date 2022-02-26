@@ -27,4 +27,11 @@ class SpringCicdApplicationTests {
                 .andExpect((ResultMatcher) content().string(equalTo("Esta es la página principal")));
     }
 
+    @Test
+    public void getNombre() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/nombre").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect((ResultMatcher) content().string(equalTo("SpringBoot CI/CD César Díaz Ufano Sánchez")));
+    }
+
 }

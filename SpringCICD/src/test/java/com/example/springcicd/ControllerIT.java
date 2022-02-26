@@ -20,5 +20,11 @@ public class ControllerIT {
         ResponseEntity<String> response = template.getForEntity("/", String.class);
         assertThat(response.getBody()).isEqualTo("Esta es la página principal");
     }
+
+    @Test
+    public void getNombre() throws Exception {
+        ResponseEntity<String> response = template.getForEntity("/nombre", String.class);
+        assertThat(response.getBody()).isEqualTo("SpringBoot CI/CD César Díaz Ufano Sánchez");
+    }
 }
 
